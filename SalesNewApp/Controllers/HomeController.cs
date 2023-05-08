@@ -11,6 +11,8 @@ namespace SalesNewApp.Controllers {
         }
 
         public IActionResult Index() {
+            ViewData["Email"] = "antonioguilhermemc@gmail.com";
+            ViewData["name"] = "antonio guilherme";
             return View();
         }
 
