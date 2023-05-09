@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SalesNewApp.Models;
+using SalesNewApp.Models.ViewModels;
 using System.Diagnostics;
 
 namespace SalesNewApp.Controllers {
@@ -9,10 +11,11 @@ namespace SalesNewApp.Controllers {
         public HomeController(ILogger<HomeController> logger) {
             _logger = logger;
         }
+        Teste teste = new Teste();
 
         public IActionResult Index() {
             ViewData["Email"] = "antonioguilhermemc@gmail.com";
-            ViewData["name"] = "antonio guilherme";
+            ViewData["name"] = "Antonio Guilherme";
             return View();
         }
 
