@@ -92,7 +92,6 @@ C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\System.Com
 C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\System.Composition.Runtime.dll
 C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\System.Composition.TypedParts.dll
 C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
@@ -269,3 +268,12 @@ C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\runtimes\w
 C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\obj\Debug\net6.0\SalesNewApp.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Lenovo\source\repos\SalesNewApp\SalesNewApp\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
