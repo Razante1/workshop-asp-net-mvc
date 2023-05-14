@@ -85,6 +85,10 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SalesNewApp\\SalesNewApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-solar.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-solar.css"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SalesNewApp\\SalesNewApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
