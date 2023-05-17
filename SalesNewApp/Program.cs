@@ -9,12 +9,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using SalesNewApp.Models;
 using SalesNewApp.Data;
-
+using System.Configuration;
+using Microsoft.AspNetCore.WebSockets;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesNewAppContext>(options =>
@@ -22,18 +22,29 @@ builder.Services.AddDbContext<SalesNewAppContext>(options =>
                             Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-mysql")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 builder.Services.AddScoped<SeedingService>();
+//Seed Data
+void SeedData(IHost app)
+{
+    var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+
+    using (var scope = scopedFactory.CreateScope())
+    {
+        var service = scope.ServiceProvider.GetService<SeedingService>();
+        service.Seed();
+    }
+}
+
 
 var app = builder.Build();
-
+SeedData(app);
 // Configure the HTTP request pipeline.
 
-using (var context = new SalesNewAppContext());
 
-    if (!app.Environment.IsDevelopment()) {
-        app.UseExceptionHandler("/Home/Error");
-    }
+if (!app.Environment.IsDevelopment()) {
+      app.UseExceptionHandler("/Home/Error");
+}
+
 
 app.UseStaticFiles();
 
