@@ -14,15 +14,22 @@ using Microsoft.EntityFrameworkCore;
 using SalesNewApp.Models;
 using SalesNewApp.Data;
 using System.Configuration;
+using SalesNewApp.Services;
 using Microsoft.AspNetCore.WebSockets;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesNewAppContext>(options =>
     options.UseMySql("server=localhost;uid=developer;initial catalog =NEW_CRUD;pwd=Zx30000zx30000!;database=salesnewappdb",
                             Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.33-mysql")));
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SeedingService>();
+builder.Services.AddScoped<SellerService>();
+
+
+
 //Seed Data
 void SeedData(IHost app)
 {
