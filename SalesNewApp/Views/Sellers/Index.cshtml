@@ -8,9 +8,9 @@
 <h2>@ViewData["Tilte"]</h2>
 
 
-<table class="table">
+<table class="table table-striped table-hover">
     <thead>
-        <tr>
+        <tr class="sucess">
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -43,7 +43,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.BaseSalary)
                 </td>
-
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a asp-action="Deletem   " asp-route-id="@item.Id">Delete</a>
             </tr>
         }
     </tbody>
