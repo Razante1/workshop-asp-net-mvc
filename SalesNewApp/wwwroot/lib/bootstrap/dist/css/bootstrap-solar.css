@@ -343,9 +343,14 @@ th {
 label {
   display: inline-block;
 }
+.teste {
+    background-color:greenyellow;
+    color:black;
+}
 
 button {
   border-radius: 0;
+
 }
 
 button:focus:not(:focus-visible) {

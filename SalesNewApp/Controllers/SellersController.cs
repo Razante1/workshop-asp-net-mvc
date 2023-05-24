@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using SalesNewApp.Models;
 using SalesNewApp.Services;
 
 namespace SalesNewApp.Controllers
@@ -17,6 +18,22 @@ namespace SalesNewApp.Controllers
         {
             var list = _sellerService.FindAll();
             return View(list);
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create([Bind("Name,Email,BirthDate,BaseSalar")] Seller seller)
+        {
+            
+                _sellerService.Insert(seller);
+                
+                return RedirectToAction(nameof(Index));
+            
+            
         }
     }
 }
