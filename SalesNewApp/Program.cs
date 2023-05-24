@@ -16,6 +16,7 @@ using SalesNewApp.Data;
 using System.Configuration;
 using SalesNewApp.Services;
 using Microsoft.AspNetCore.WebSockets;
+using Microsoft.Build.Framework;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesNewAppContext>(options =>
@@ -27,6 +28,7 @@ builder.Services.AddDbContext<SalesNewAppContext>(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
+builder.Services.AddScoped<DepartmentService>();
 
 
 

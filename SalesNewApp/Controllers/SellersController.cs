@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using SalesNewApp.Models;
+using SalesNewApp.Models.ViewModels;
 using SalesNewApp.Services;
 
 namespace SalesNewApp.Controllers
@@ -8,10 +9,11 @@ namespace SalesNewApp.Controllers
     public class SellersController : Controller
     {
         private readonly SellerService _sellerService;
-
-        public SellersController (SellerService sellerService)
+        private readonly DepartmentService _departmentService;
+        public SellersController (SellerService sellerService, DepartmentService departmentService)
         {
             _sellerService = sellerService;
+            _departmentService = departmentService;
         }
 
         public IActionResult Index()
@@ -21,19 +23,57 @@ namespace SalesNewApp.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            var departments = _departmentService.FindAll();
+            var viewModel = new SellerFormViewModel { Departments = departments };
+            return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Name,Email,BirthDate,BaseSalar")] Seller seller)
+        public IActionResult Create([Bind("Name,Email,BirthDate,BaseSalary,DepartmentId")] Seller seller)
         {
             
-                _sellerService.Insert(seller);
-                
-                return RedirectToAction(nameof(Index));
-            
-            
+                _sellerService.Insert(seller);                
+                return RedirectToAction(nameof(Index));           
+        }
+
+        public IActionResult Delete(int? id) 
+        { 
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var obj = _sellerService.FindById(id.Value);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete (int id)
+        {
+            _sellerService.Remove(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Details(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var obj = _sellerService.FindById(id.Value);
+
+            if(obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
         }
     }
 }
