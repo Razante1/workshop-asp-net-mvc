@@ -18,6 +18,8 @@ using SalesNewApp.Services;
 using Microsoft.AspNetCore.WebSockets;
 using Microsoft.Build.Framework;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesNewAppContext>(options =>
     options.UseMySql("server=localhost;uid=developer;initial catalog =NEW_CRUD;pwd=Zx30000zx30000!;database=salesnewappdb",
@@ -29,6 +31,16 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
 builder.Services.AddScoped<DepartmentService>();
+
+
+
+var enUS = new CultureInfo("en-US");
+var localizationOption = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture(enUS),
+    SupportedCultures = new List<CultureInfo> { enUS },
+    SupportedUICultures = new List<CultureInfo> { enUS }
+};
 
 
 
