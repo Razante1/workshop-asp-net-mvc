@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
-using SalesNewApp.Models;
+﻿using SalesNewApp.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace SalesNewApp.Services
 {
     public class DepartmentService
     {
-
         private readonly SalesNewAppContext _context;
 
         public DepartmentService(SalesNewAppContext context)
@@ -13,11 +16,9 @@ namespace SalesNewApp.Services
             _context = context;
         }
 
-        public List<Department> FindAll()
+        public async Task<List<Department>> FindAllAsync()
         {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
     }
-
-
 }
